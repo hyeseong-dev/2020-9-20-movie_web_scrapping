@@ -42,3 +42,19 @@ def new_search(request):
 
     return render(request, 'new_search.html', final2_dictionary)
 
+
+def moviepage(request):
+    text = request.GET.get('submit')
+    r = requests.get(text)
+    soup = BeautifulSoup(r.text, 'html.parser')
+    title = soup.find_all('div', class_='singcont')
+    title = title[0].contents[1].text
+    title = title[:-20]
+    print(title)
+    link = soup.find_all('iframe')
+    all_link=[]
+    for a in link:
+        all_link.append(a['src'])
+
+    all_dict = {'all_dict':all_link, 'title':title}
+    return render(request, 'moviepage.html', all_dict)

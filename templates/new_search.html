@@ -7,7 +7,12 @@
         <div class="card" style="width: 18rem;">
             <img src="{{dict.2}}" class="card-img-top" alt="...">
             <div class="card-body">
-                <h5 class="card-title"><a href="{{dict.1}}">{{dict.0}}</a></h5>
+                <h5 class="card-title">{{dict.0}}</h5>
+                <form action="/moviepage" method="get">
+                <button class="btn btn-outline-success my-2 my-sm-0" 
+                            style="background-color: #1577DC; color:white" value="{{dict.1}}" name="submit" type="submit">Watch Movie
+                </button>
+                </form>
             </div>
         </div>
     </div>

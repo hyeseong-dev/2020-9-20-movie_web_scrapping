@@ -1,0 +1,15 @@
+{% extends 'base.html' %} 
+
+{% block content %}
+{% for a in all_dict %}
+
+<div class="row mt-4">
+<h2 style="color:white">{{title}}</h2>
+<div class="embed-responsive embed-responsive-16by9">
+<iframe width="640" height="365" src="{{a}}" 
+        frameborder="0" allow="autoplay" allowfullscreen=""></iframe>
+</div>
+</div>
+{% endfor %}
+
+{% endblock content %}
