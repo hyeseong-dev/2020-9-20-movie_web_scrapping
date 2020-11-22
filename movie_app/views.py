@@ -24,6 +24,7 @@ def index(request):
 
 
 def new_search(request):
+    # 검색란에서 찾고자 하는 키워드를 검색 버튼으로 누른 이후의 로직 담당
     base_url = 'https://www.watchmovies7.com.pk/?{}{}'
     text = request.GET.get('search')
     final_url = base_url.format('s=', text)  
@@ -44,6 +45,7 @@ def new_search(request):
 
 
 def moviepage(request):
+# 메인 화면에서 'Watch Movie'버튼 클릭시 보여질 화면의 로직 담당
     text = request.GET.get('submit')
     r = requests.get(text)
     soup = BeautifulSoup(r.text, 'html.parser')
